@@ -1,0 +1,20 @@
+services:
+  back:
+    container_name: fb-back
+    build:
+      context: ./back
+      dockerfile: ./back/Dockerfile
+    ports:
+      - 8000:8000
+
+  front:
+    container_name: fb-front
+    build:
+      context: ./front
+      dockerfile: ./front/Dockerfile
+    ports:
+      - 5000:4200
+    depends_on:
+      - back
+
+  
