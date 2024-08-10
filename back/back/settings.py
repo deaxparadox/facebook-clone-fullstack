@@ -25,18 +25,27 @@ SECRET_KEY = 'django-insecure-!9==0mnv@m+$mda_2&qojz8i^r58nsvxmy!ta!h^-bc0+(*-0b
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    "daphne",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+] + [
+    "rest_framework",
+] + [
+    "app.apps.AppConfig",
+    "api.apps.ApiConfig",
+    "chat.apps.ChatConfig",
+    "myprofile.apps.MyprofileConfig",
+    
 ]
 
 MIDDLEWARE = [
@@ -68,7 +77,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'back.wsgi.application'
-
+ASGI_APPLICATION = "back.asgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
@@ -121,3 +130,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+    

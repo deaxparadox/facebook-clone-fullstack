@@ -4,17 +4,17 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-navbar',
   standalone: true,
   imports: [
     CommonModule,
-    RouterOutlet,
     RouterLink,
+    RouterOutlet,
     RouterLinkActive
   ],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  templateUrl: './navbar.component.html',
+  styleUrl: './navbar.component.scss'
 })
-export class AppComponent {
-  title = 'front';
+export class NavbarComponent {
+
 }
