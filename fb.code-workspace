@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"name": "front",
+			"path": "front"
+		},
+		{
+			"name": "back",
+			"path": "back"
+		},
+		{
+			"name": "upload",
+			"path": "upload"
+		},
+		{
+			"path": "clients"
+		}
+	]
+}
