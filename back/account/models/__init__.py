@@ -4,9 +4,12 @@ from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.models import User
 
 
-from models.setting import Setting
-from models.profile import Profile
-from models.unique import Unqiue
+from account.models.setting import Setting
+from account.models.profile import Profile
+from account.models.unique import Unqiue
+from account.models.token import APIToken
+
+
 
 
 class Account(models.Model):
@@ -23,6 +26,10 @@ class Account(models.Model):
     
     # setting models
     setting = models.OneToOneField(Setting, on_delete=models.SET_NULL, blank=True, null=True,  related_name="account")
+    
+    
+    # API Token
+    token = models.OneToOneField(APIToken, on_delete=models.SET_NULL, blank=True, null=True, related_name="account")
     
     def save(self, *args, **kwargs) -> None:
         self.profile = Profile.objects.create()

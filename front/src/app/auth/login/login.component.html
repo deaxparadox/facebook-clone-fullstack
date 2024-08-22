@@ -1,1 +1,48 @@
-<p>login works!</p>
+<div id="board">
+
+    <div id="top">
+        <div id="center">
+            <div id="left">
+                <div id="message">
+                    <img id="sitelogo" [src]="siteLogo" alt="Image not found" />
+                    <p id="sitemessage">{{siteMessage}}</p>
+                </div>
+            </div>
+            <div id="right">
+                <div id="right-inner">
+                    <!-- Login form -->
+                    <div id="form">
+                        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                            <input type="text" name="username" id="" formControlName="usernameForm" placeholder="Email Address">
+                            <br>
+                            <input type="password" name="password" id="" formControlName="passwordForm" placeholder="Password">
+
+                            <!-- <p>Complete the form to enable button.</p> -->
+                            <br>
+                            <button type="submit" [disabled]="!loginForm.valid">Log in</button>
+                        </form>
+
+                        <!-- Link for forgotten password -->
+                        <div id="forgotten-password">
+                            <a href="#">Forgotten password?</a>
+                        </div>
+                    </div>
+
+                    <!-- horizontal line -->
+                    <hr>
+
+                    <!-- Create new account -->
+                    <div id="create-new-account">
+                        <a href="#"><span>Create new account</span></a>
+                    </div>
+                </div>
+
+                <p id="create-page-for-celebrity"><a href="#"><strong>Create a Page</strong></a> for a celebrity, brand or business.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="bottom">
+        <p>{{copyRight}}</p>
+    </div>
+</div>

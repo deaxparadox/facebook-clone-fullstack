@@ -1,8 +1,9 @@
 from django.contrib import admin
 
-from models.profile import Profile
-from models.setting import Setting
-from myprofile.models import Account
+# Register your models here.
+from account.models.profile import Profile
+from account.models.setting import Setting
+from account.models import Account
 
 
 class ProfileAdmin(admin.ModelAdmin):
