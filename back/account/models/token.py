@@ -6,7 +6,9 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 
 
-class APIToken(models.Model):
+from account.models.extra import Time
+
+class APIToken(Time):
     """
     The default authorization token model.
     """
@@ -27,7 +29,7 @@ class APIToken(models.Model):
         return binascii.hexlify(os.urandom(20)).decode()
 
     def __str__(self):
-        return self.key
+        return "%s" % self.key
 
 
 class TokenProxy(APIToken):

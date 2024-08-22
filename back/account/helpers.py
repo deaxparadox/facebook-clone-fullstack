@@ -25,7 +25,7 @@ class ProfileStatusChoices(models.TextChoices):
     ACTIVE = "ACT", _("Active")
     DEACTIVE = "DCT", _("Deactive")
     
-class ProfileDeleteChoices(models.TextChoices):
+class ProfileDeactivateChoices(models.TextChoices):
     YES = "Y", _("Yes")
     NO = "N", _("No")
     

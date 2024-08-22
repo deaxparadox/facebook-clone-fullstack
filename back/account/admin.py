@@ -3,6 +3,7 @@ from django.contrib import admin
 # Register your models here.
 from account.models.profile import Profile
 from account.models.setting import Setting
+from account.models.token import APIToken
 from account.models import Account
 
 
@@ -15,6 +16,10 @@ class SettingAdmin(admin.ModelAdmin):
 class AccountAdmin(admin.ModelAdmin):
     pass
 
+class APITokenAdmin(admin.ModelAdmin):
+    pass
+
 admin.site.register(Profile, ProfileAdmin)
 admin.site.register(Setting, SettingAdmin)
 admin.site.register(Account, AccountAdmin)
+admin.site.register(APIToken, APITokenAdmin)
