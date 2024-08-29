@@ -15,12 +15,14 @@ class LoginSerializer(serializers.Serializer):
         username = self.validated_data.get("username")
         password = self.validated_data.get("password")
         
+        print(username, password)
+        
         user = User.objects.get(username=username)
         
         # check user password
         if user.check_password(password):
             return {
-                "token": user.account.token.key,
+                "token": user.account.apitoken.key,
                 "uid": user.account.uid.id
             }
         

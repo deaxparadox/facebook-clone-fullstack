@@ -10,7 +10,7 @@ class Unique(Time):
     id = models.CharField(_("id"), max_length=36, primary_key=True, unique=True)
     
     def __str__(self) -> str:
-        return "%s" % str(self.id)
+        return self.id
     
 
 
